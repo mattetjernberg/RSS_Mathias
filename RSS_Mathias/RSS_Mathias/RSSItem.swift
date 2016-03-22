@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RSSItem {
+struct RSSItem {
     var title: String = ""
     var link: String = ""
     var description: String = ""

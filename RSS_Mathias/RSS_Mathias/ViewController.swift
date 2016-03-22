@@ -38,6 +38,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "details" {
+            print(tableView.indexPathForSelectedRow)
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                print("Error: selected indexpath is nil")
+                return
+            }
+            
+            tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
+            
+            let detailsViewController = segue.destinationViewController as! ViewControllerDetails
+            let rssItem = rssItems[selectedIndexPath.row]
+            detailsViewController.title = rssItem.title
+            detailsViewController.rssItem = rssItem
+        }
+    }
+    
     private func loadRSS() {
         
         guard let nsurl = NSURL(string: RSS_URL) else {
@@ -58,7 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: NSXML
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        print("ELEMENT NAME: \(elementName)")
+        //print("ELEMENT NAME: \(elementName)")
         
         switch elementName {
             case "item":
@@ -79,9 +96,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else if tagsFound["description"] == true {
             rssItem?.description += string
         } else if tagsFound["pubDate"] == true {
-            rssItem?.description += string
+            rssItem?.pubDate += string
         } else if tagsFound["guid"] == true {
-            rssItem?.description += string
+            rssItem?.guid += string
         }
     }
     
@@ -126,6 +143,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = rssItem.title
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("details", sender: self)
     }
 
 }
