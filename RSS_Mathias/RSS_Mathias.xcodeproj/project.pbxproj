@@ -18,6 +18,7 @@
 		78ED91DC1CA1DC2A007D14C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */; };
 		78ED91DE1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */; };
 		78ED91E01CA1E369007D14C1 /* SlideshowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */; };
+		78ED91E21CA1E57A007D14C1 /* SlideshowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78ED91E11CA1E57A007D14C1 /* SlideshowView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSlideshow.swift; sourceTree = "<group>"; };
 		78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideshowView.swift; sourceTree = "<group>"; };
+		78ED91E11CA1E57A007D14C1 /* SlideshowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideshowView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */,
 				78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */,
 				78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */,
+				78ED91E11CA1E57A007D14C1 /* SlideshowView.xib */,
 			);
 			path = RSS_Mathias;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				78ED91C01CA1B88F007D14C1 /* LaunchScreen.storyboard in Resources */,
 				78ED91BD1CA1B88F007D14C1 /* Assets.xcassets in Resources */,
 				78ED91BB1CA1B88F007D14C1 /* Main.storyboard in Resources */,
+				78ED91E21CA1E57A007D14C1 /* SlideshowView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,5 +9,12 @@
 import UIKit
 
 class SlideshowView: UIView {
-    var rssItem: RSSItem?
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var pubDateLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    }
 }

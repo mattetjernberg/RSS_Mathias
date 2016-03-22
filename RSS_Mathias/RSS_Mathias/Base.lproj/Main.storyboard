@@ -93,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-lH-LIh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Oc-EJ-7RE">
                                 <rect key="frame" x="541" y="20" width="39" height="30"/>
@@ -101,7 +101,9 @@
                                     <constraint firstAttribute="width" constant="39" id="Gci-3v-owh"/>
                                     <constraint firstAttribute="height" constant="30" id="Kpq-EZ-rVd"/>
                                 </constraints>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="dismiss" destination="xnp-dW-gsk" eventType="touchUpInside" id="Sow-eE-PX7"/>
                                 </connections>
@@ -110,7 +112,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Oc-EJ-7RE" firstAttribute="top" secondItem="Ouo-I8-sD3" secondAttribute="bottom" id="AL7-Fb-R6N"/>
-                            <constraint firstItem="46j-lH-LIh" firstAttribute="top" secondItem="znK-kM-Jnb" secondAttribute="top" id="TdW-ov-9MR"/>
+                            <constraint firstItem="46j-lH-LIh" firstAttribute="top" secondItem="znK-kM-Jnb" secondAttribute="top" constant="50" id="TdW-ov-9MR"/>
                             <constraint firstItem="8Oc-EJ-7RE" firstAttribute="trailing" secondItem="znK-kM-Jnb" secondAttribute="trailingMargin" id="bEy-JG-zxC"/>
                             <constraint firstItem="46j-lH-LIh" firstAttribute="leading" secondItem="znK-kM-Jnb" secondAttribute="leading" id="izx-FA-puO"/>
                             <constraint firstItem="vQR-fh-sXo" firstAttribute="top" secondItem="46j-lH-LIh" secondAttribute="bottom" id="qgo-Sc-yRX"/>
@@ -123,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26e-0J-auB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="960"/>
+            <point key="canvasLocation" x="555" y="1044"/>
         </scene>
         <!--View Controller Details-->
         <scene sceneID="173-bv-pef">
@@ -146,7 +148,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FYw-pp-Z4x">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYw-pp-Z4x">
                                 <rect key="frame" x="20" y="109" width="560" height="234"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>

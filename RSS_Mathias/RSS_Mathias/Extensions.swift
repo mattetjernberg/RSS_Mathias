@@ -18,3 +18,12 @@ extension String {
         }
     }
 }
+
+extension UIView {
+    class func loadFromNibNamed(bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: String(self),
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+    }
+}

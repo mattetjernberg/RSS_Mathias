@@ -64,6 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func loadRSS() {
         guard let nsurl = NSURL(string: RSS_URL) else {
+            // Todo: Handle error
             print("Could not create a nsurl")
             return
         }
@@ -77,8 +78,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: NSXML
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        //print("ELEMENT NAME: \(elementName)")
-        
         switch elementName {
             case "item":
                 rssItem = RSSItem()
@@ -127,6 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
         activity.stopAnimating()
+        // Todo: Handle error
         print("Parse error occured with error: \(parseError)")
     }
     
