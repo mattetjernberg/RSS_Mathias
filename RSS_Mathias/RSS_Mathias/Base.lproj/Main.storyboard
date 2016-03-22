@@ -18,8 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PcV-Vf-vOb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RSSCell" id="0jO-gk-EpC">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jO-gk-EpC" id="uDV-Wm-Ev6">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-E4-xvy">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
@@ -32,7 +42,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PcV-Vf-vOb" secondAttribute="bottom" id="VkS-0s-G71"/>
                             <constraint firstItem="bvT-E4-xvy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQY-EV-EHw"/>
                             <constraint firstItem="PcV-Vf-vOb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xR4-uD-Qlo"/>
-                            <constraint firstItem="PcV-Vf-vOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y8R-D9-bOs"/>
+                            <constraint firstItem="PcV-Vf-vOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="y8R-D9-bOs"/>
                         </constraints>
                     </view>
                     <connections>

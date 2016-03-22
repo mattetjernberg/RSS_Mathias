@@ -14,11 +14,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     let RSS_URL: String = "http://www.dn.se/nyheter/m/rss/"
+    let VALID_TAGS: [String] = ["title", "link", "description", "pubDate", "guid"]
     var parser: NSXMLParser!
     var rssItems: [RSSItem] = [RSSItem]()
+    var rssItem: RSSItem?
+    var tagsFound: [String: Bool] = [String: Bool]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activity.hidesWhenStopped = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -46,17 +52,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         parser.parse()
     }
     
+    private func isValidTag(tag: String) -> Bool {
+        return VALID_TAGS.contains(tag)
+    }
+    
     // MARK: NSXML
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         print("ELEMENT NAME: \(elementName)")
+        
+        switch elementName {
+            case "item":
+                rssItem = RSSItem()
+            break
+            case "title", "link", "description", "pubDate", "guid":
+                tagsFound[elementName] = true
+            break
+            default: break
+        }
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
-        
+        if tagsFound["title"] == true {
+            rssItem?.title += string
+        } else if tagsFound["link"] == true {
+            rssItem?.link += string
+        } else if tagsFound["description"] == true {
+            rssItem?.description += string
+        } else if tagsFound["pubDate"] == true {
+            rssItem?.description += string
+        } else if tagsFound["guid"] == true {
+            rssItem?.description += string
+        }
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
+        switch elementName {
+            case "item":
+                if let item = rssItem {
+                    rssItems.append(item)
+                } else {
+                    print("Error: rssItems was never created, can't append item")
+                }
+            break
+            case "title", "link", "description", "pubDate", "guid":
+                tagsFound[elementName] = false
+            break
+            default: break
+        }
     }
     
     func parserDidEndDocument(parser: NSXMLParser) {
@@ -71,7 +113,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: Tableview
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return rssItems.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -79,7 +121,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("RSSCell", forIndexPath: indexPath)
+        let rssItem = rssItems[indexPath.row]
+        cell.textLabel?.text = rssItem.title
+        
+        return cell
     }
 
 }
