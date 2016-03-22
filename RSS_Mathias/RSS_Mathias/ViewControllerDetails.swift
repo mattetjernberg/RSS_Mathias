@@ -21,7 +21,7 @@ class ViewControllerDetails: UIViewController {
             return
         }
         
-        descriptionTextView.text = rssItem.description
+        descriptionTextView.attributedText = rssItem.description.html2AttributedString
         pubDateLabel.text = rssItem.pubDate
         linkButton.setTitle(rssItem.link, forState: UIControlState.Normal)
     }

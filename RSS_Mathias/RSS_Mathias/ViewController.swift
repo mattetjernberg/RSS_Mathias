@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(14.0)]
+        
         activity.hidesWhenStopped = true
         
         tableView.delegate = self
@@ -139,6 +141,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RSSCell", forIndexPath: indexPath)
+        cell.textLabel?.font = UIFont.systemFontOfSize(12.0)
         let rssItem = rssItems[indexPath.row]
         cell.textLabel?.text = rssItem.title
         

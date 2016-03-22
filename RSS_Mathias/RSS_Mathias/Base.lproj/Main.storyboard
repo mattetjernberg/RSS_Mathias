@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="708" y="-522"/>
         </scene>
-        <!--View Controller-->
+        <!--RSS News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RSS_Mathias" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <constraint firstItem="PcV-Vf-vOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="y8R-D9-bOs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RIF-DZ-Ku1"/>
+                    <navigationItem key="navigationItem" title="RSS News" id="RIF-DZ-Ku1"/>
                     <connections>
                         <outlet property="activity" destination="bvT-E4-xvy" id="zKY-uH-BuF"/>
                         <outlet property="tableView" destination="PcV-Vf-vOb" id="EyE-5u-x2M"/>
@@ -89,7 +89,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="F9w-qU-0QK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -100,7 +100,7 @@
                                     <constraint firstAttribute="height" constant="234" id="zhV-Nt-R9W"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7Y-KI-HNp">
@@ -108,7 +108,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Euz-Zx-5Na"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.52941176469999995" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="linkTapped:" destination="waB-bj-aIo" eventType="touchUpInside" id="yFQ-Hm-fMa"/>
                                 </connections>
