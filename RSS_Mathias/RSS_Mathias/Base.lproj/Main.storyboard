@@ -21,16 +21,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-E4-xvy">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bvT-E4-xvy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="E5R-gI-pP5"/>
                             <constraint firstAttribute="trailing" secondItem="PcV-Vf-vOb" secondAttribute="trailing" id="U84-70-W4k"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PcV-Vf-vOb" secondAttribute="bottom" id="VkS-0s-G71"/>
+                            <constraint firstItem="bvT-E4-xvy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gQY-EV-EHw"/>
                             <constraint firstItem="PcV-Vf-vOb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xR4-uD-Qlo"/>
                             <constraint firstItem="PcV-Vf-vOb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y8R-D9-bOs"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="bvT-E4-xvy" id="zKY-uH-BuF"/>
                         <outlet property="tableView" destination="PcV-Vf-vOb" id="EyE-5u-x2M"/>
                     </connections>
                 </viewController>
