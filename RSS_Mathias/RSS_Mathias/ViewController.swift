@@ -13,12 +13,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
-    let RSS_URL: String = "http://www.dn.se/nyheter/m/rss/"
-    let VALID_TAGS: [String] = ["title", "link", "description", "pubDate", "guid"]
-    var parser: NSXMLParser!
-    var rssItems: [RSSItem] = [RSSItem]()
-    var rssItem: RSSItem?
-    var tagsFound: [String: Bool] = [String: Bool]()
+    private let RSS_URL: String = "http://www.dn.se/nyheter/m/rss/"
+    private var parser: NSXMLParser!
+    private var rssItems: [RSSItem] = [RSSItem]()
+    private var rssItem: RSSItem?
+    private var tagsFound: [String: Bool] = [String: Bool]()
     
     
     override func viewDidLoad() {
@@ -42,7 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "details" {
-            print(tableView.indexPathForSelectedRow)
             guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
                 print("Error: selected indexpath is nil")
                 return
@@ -54,11 +52,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let rssItem = rssItems[selectedIndexPath.row]
             detailsViewController.title = rssItem.title
             detailsViewController.rssItem = rssItem
+        } else if segue.identifier == "slideshow" {
+            let slideShowViewController = segue.destinationViewController as! ViewControllerSlideshow
+            slideShowViewController.rssItems = rssItems
         }
     }
     
+    @IBAction func startSlideShow() {
+        performSegueWithIdentifier("slideshow", sender: self)
+    }
+    
     private func loadRSS() {
-        
         guard let nsurl = NSURL(string: RSS_URL) else {
             print("Could not create a nsurl")
             return
@@ -69,10 +73,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         parser = NSXMLParser(contentsOfURL: nsurl)
         parser.delegate = self
         parser.parse()
-    }
-    
-    private func isValidTag(tag: String) -> Bool {
-        return VALID_TAGS.contains(tag)
     }
     
     // MARK: NSXML

@@ -13,7 +13,7 @@ extension String {
         do {
             return try NSAttributedString(data: dataUsingEncoding(NSUTF16StringEncoding)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
         } catch {
-            print(error)
+            print("Failed to parse attributes html string: \(error)")
             return nil
         }
     }

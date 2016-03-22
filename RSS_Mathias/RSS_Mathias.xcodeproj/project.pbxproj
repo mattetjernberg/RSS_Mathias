@@ -16,6 +16,8 @@
 		78ED91D81CA1BF46007D14C1 /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91D71CA1BF46007D14C1 /* RSSItem.swift */; };
 		78ED91DA1CA1CF06007D14C1 /* ViewControllerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91D91CA1CF06007D14C1 /* ViewControllerDetails.swift */; };
 		78ED91DC1CA1DC2A007D14C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */; };
+		78ED91DE1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */; };
+		78ED91E01CA1E369007D14C1 /* SlideshowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		78ED91D71CA1BF46007D14C1 /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		78ED91D91CA1CF06007D14C1 /* ViewControllerDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDetails.swift; sourceTree = "<group>"; };
 		78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSlideshow.swift; sourceTree = "<group>"; };
+		78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideshowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				78ED91D71CA1BF46007D14C1 /* RSSItem.swift */,
 				78ED91D91CA1CF06007D14C1 /* ViewControllerDetails.swift */,
 				78ED91DB1CA1DC2A007D14C1 /* Extensions.swift */,
+				78ED91DD1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift */,
+				78ED91DF1CA1E369007D14C1 /* SlideshowView.swift */,
 			);
 			path = RSS_Mathias;
 			sourceTree = "<group>";
@@ -206,10 +212,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ED91DE1CA1DFB8007D14C1 /* ViewControllerSlideshow.swift in Sources */,
 				78ED91DC1CA1DC2A007D14C1 /* Extensions.swift in Sources */,
 				78ED91B81CA1B88F007D14C1 /* ViewController.swift in Sources */,
 				78ED91B61CA1B88F007D14C1 /* AppDelegate.swift in Sources */,
 				78ED91D81CA1BF46007D14C1 /* RSSItem.swift in Sources */,
+				78ED91E01CA1E369007D14C1 /* SlideshowView.swift in Sources */,
 				78ED91DA1CA1CF06007D14C1 /* ViewControllerDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
