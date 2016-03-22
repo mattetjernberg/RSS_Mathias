@@ -21,21 +21,22 @@ class ViewControllerSlideshow: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        guard let _ = rssItems else {
+            print("No rss items for slideshow")
+            return
+        }
+        
         addRSSItems()
         NSTimer.scheduledTimerWithTimeInterval(TIMER_INTERVAL_IN_SECONDS, target: self, selector: "showNextPage", userInfo: nil, repeats: true)
     }
     
     private func addRSSItems() {
-        guard let rssItems = rssItems else {
-            print("No rss items to for slideshow")
-            return
-        }
-        
         let size = scrollView.frame.size
-        for var i = 0; i < rssItems.count; i++ {
+        for var i = 0; i < rssItems!.count; i++ {
             let x:CGFloat = size.width * CGFloat(i)
             let y:CGFloat = 0
-            let rssItem = rssItems[i]
+            let rssItem = rssItems![i]
             let view = SlideshowView.loadFromNibNamed() as! SlideshowView
             view.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
             view.titleLabel.text = rssItem.title
@@ -44,7 +45,7 @@ class ViewControllerSlideshow: UIViewController, UIScrollViewDelegate {
             scrollView.addSubview(view)
         }
         
-        scrollView.contentSize = CGSize(width: size.width * CGFloat(rssItems.count), height: size.height)
+        scrollView.contentSize = CGSize(width: size.width * CGFloat(rssItems!.count), height: size.height)
     }
     
     func showNextPage() {
